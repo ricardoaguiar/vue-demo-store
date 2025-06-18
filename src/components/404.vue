@@ -1,5 +1,5 @@
 <template>
-  <Header />
+  <HeaderComponent />
   <div class="not-found-container">
     <h1 class="not-found-title">Oops! 404 - Page Not Found</h1>
     <p class="not-found-message">
@@ -14,14 +14,14 @@
       >Back to Product List</ButtonComponent
     >
   </div>
-  <Footer />
+  <FooterComponent />
 </template>
 
 <script setup lang="ts">
 import router from '@/router'
 import { useAsset } from '@/composables'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 import ButtonComponent from '@/components/UI/ButtonComponent.vue'
 
 function backToProducts(): void {

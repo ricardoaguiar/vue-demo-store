@@ -5,10 +5,6 @@ import NavLinks from '@/components/Header/NavLinks.vue'
 import Logo from '@/components/Header/Logo.vue'
 import BasketButton from '@/components/Header/BasketButton.vue'
 import Basket from '@/components/Header/Basket.vue'
-
-defineProps<{
-  isHeaderNavigation?: boolean
-}>()
 </script>
 
 <template>
@@ -19,7 +15,7 @@ defineProps<{
       <div class="navbar-group left-side is-flex is-align-items-center">
         <MobileMenu />
         <Logo class="logo" />
-        <NavLinks :isHeaderNavigation="true" />
+        <NavLinks :is-header-navigation="true" />
         <a href="https://rba.dev" target="_blank">Blog</a>
       </div>
 

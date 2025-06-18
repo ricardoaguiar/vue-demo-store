@@ -9,7 +9,7 @@ import { useMainStore } from '@/store'
 const routes = [
   {
     path: '/',
-    component: () => import('@/views/Layout.vue'),
+    component: () => import('@/views/LayoutComponent.vue'),
     children: [
       {
         path: '',

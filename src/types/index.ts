@@ -56,7 +56,7 @@ export interface NavigationResponse {
   }
 }
 
-// Footer-related interfaces
+// FooterComponent-related interfaces
 export interface Footer {
   sections: FooterSection[]
   contactInfo: ContactInfo
@@ -86,7 +86,7 @@ export interface SocialLink {
   url?: string
 }
 
-// Footer API Response
+// FooterComponent API Response
 export interface FooterResponse {
   footer: FooterSection[]
   contactInfo: ContactInfo

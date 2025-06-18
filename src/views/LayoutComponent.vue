@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useRoute } from 'vue-router'
-import Header from '@/components/Header.vue'
-import Footer from '@/components/Footer.vue'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
 import Newsletter from '@/components/Newsletter.vue'
 
 const route = useRoute()
@@ -9,14 +9,14 @@ const route = useRoute()
 
 <template>
   <div class="wrapper" :key="route.fullPath">
-    <Header />
+    <HeaderComponent />
 
     <main>
       <router-view />
     </main>
 
     <Newsletter v-if="route.path !== '/contact'" />
-    <Footer />
+    <FooterComponent />
   </div>
 </template>
 

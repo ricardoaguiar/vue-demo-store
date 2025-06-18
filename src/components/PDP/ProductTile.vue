@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { useMainStore } from '@/store'
@@ -62,16 +62,16 @@ function handleClick(actionType: string, product?: Product): void {
     ]"
   >
     <ButtonComponent
-      buttonClass="view-item-button"
       :isRelatedProduct="true"
-      @click="handleClick('navigateToProduct', product)"
       :product="product"
       :style="{ cursor: !isRelatedProduct ? 'auto' : '' }"
+      buttonClass="view-item-button"
+      @click="handleClick('navigateToProduct', product)"
     >
       <img
-        class="img-fluid"
-        :src="useAsset(product?.img)"
         :alt="product?.title"
+        :src="useAsset(product?.img)"
+        class="img-fluid"
       />
     </ButtonComponent>
 
@@ -85,39 +85,39 @@ function handleClick(actionType: string, product?: Product): void {
         <p>{{ product?.description }}</p>
       </template>
 
-      <h1 class="title" v-if="isRelatedProduct">{{ product?.title }}</h1>
+      <h1 v-if="isRelatedProduct" class="title">{{ product?.title }}</h1>
       <h3 class="price">${{ product?.price }}</h3>
 
       <div class="flex counter-container has-text-centered">
         <div class="counter-container-buttons">
           <ButtonComponent
-            actionType="decrement"
             :quantity="quantity"
-            @click="handleClick('decrement')"
+            actionType="decrement"
             buttonClass="button update-quantity"
             buttonText="−"
+            @click="handleClick('decrement')"
           />
           <span class="quantity">{{ quantity }}</span>
           <ButtonComponent
-            actionType="increment"
             :quantity="quantity"
-            @click="handleClick('increment')"
+            actionType="increment"
             buttonClass="button update-quantity"
             buttonText="+"
+            @click="handleClick('increment')"
           />
         </div>
         <ButtonComponent
           actionType="addToCart"
           buttonClass="button add-to-cart-button"
-          @click="handleClick('addToCart', product)"
           buttonText="add to cart"
+          @click="handleClick('addToCart', product)"
         />
       </div>
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .title-reviews {
   width: fit-content;
 }

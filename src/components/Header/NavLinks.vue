@@ -9,13 +9,16 @@ const router = useRouter()
 
 onMounted(async () => await store.fetchNavigation())
 
-const props = defineProps<{
-  isHeaderNavigation?: boolean
-}>()
+const { isHeaderNavigation } = defineProps({
+  isHeaderNavigation: {
+    type: Boolean,
+    required: false,
+  },
+})
 
 function navigateTo(path: string): void {
   const isSamePath = router.currentRoute.value.fullPath === path
-  const shouldToggleMenu = !props.isHeaderNavigation
+  const shouldToggleMenu = !isHeaderNavigation
 
   if (isSamePath && shouldToggleMenu) {
     store.toggleMobileMenu()

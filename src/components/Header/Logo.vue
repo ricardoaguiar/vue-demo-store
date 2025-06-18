@@ -1,20 +1,20 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useAsset } from '@/composables'
 </script>
 
 <template>
-  <router-link to="/" class="logo">
+  <router-link class="logo" to="/">
     <img
       :src="useAsset('fi-logo.svg')"
-      width="40"
-      height="40"
       alt="site-logo"
+      height="40"
       title="site-logo"
+      width="40"
     />
   </router-link>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .logo {
   @include responsive(mobile, max) {
     position: absolute;

@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useMainStore } from '@/store'
 import ProductTile from '@/components/PDP/ProductTile.vue'
 
@@ -8,12 +8,12 @@ const store = useMainStore()
 <template>
   <div class="related-products">
     <template v-for="product in store.filteredProducts" :key="product.id">
-      <ProductTile :product="product" :isRelatedProduct="true" />
+      <ProductTile :isRelatedProduct="true" :product="product" />
     </template>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .related-products {
   display: grid;
   grid-template-columns: repeat(3, 1fr);

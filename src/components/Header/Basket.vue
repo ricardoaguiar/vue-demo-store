@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useRouter } from 'vue-router'
 import { useMainStore } from '@/store'
 
@@ -44,9 +44,9 @@ function goShopping(): void {
         Your cart is empty, try to add some items.
       </Notification>
       <div
-        class="cart-container is-mobile"
         v-for="item in store.cartItems"
         :key="item.id"
+        class="cart-container is-mobile"
       >
         <div class="cart-item column is-full">
           <Item :item="item" />
@@ -55,24 +55,24 @@ function goShopping(): void {
 
       <Total v-if="store.itemsNumber" />
 
-      <div class="basket-buttons" v-if="store.cartItems.length > 0">
+      <div v-if="store.cartItems.length > 0" class="basket-buttons">
         <ButtonComponent
-          buttonText="Continue Shopping"
           buttonClass="continue-shopping"
+          buttonText="Continue Shopping"
           @click="goShopping"
         />
 
         <ButtonComponent
-          buttonText="Complete Checkout"
           buttonClass="complete-checkout"
+          buttonText="Complete Checkout"
           @click="handleCheckout"
         />
       </div>
 
       <ButtonComponent
         v-if="store.cartItems.length === 0"
-        buttonText="Go Shopping"
         buttonClass="go-shopping"
+        buttonText="Go Shopping"
         @click="goShopping"
       />
     </div>
@@ -83,7 +83,7 @@ function goShopping(): void {
   ></div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .cart-title {
   border-bottom: 1px solid rgba(211, 211, 211, 0.5);
   background: $color-black;

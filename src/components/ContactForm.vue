@@ -10,10 +10,10 @@
             <label class="label" for="name">Name </label>
             <input
               id="name"
-              type="text"
               class="input"
-              required
               placeholder="name"
+              required
+              type="text"
             />
           </div>
         </div>
@@ -22,10 +22,10 @@
             <label class="label" for="email">E-mail </label>
             <input
               id="email"
-              type="email"
               class="input"
               placeholder="email"
               required
+              type="email"
             />
           </div>
         </div>
@@ -36,8 +36,8 @@
               id="message"
               class="textarea"
               placeholder="message"
-              rows="3"
               required
+              rows="3"
             ></textarea>
           </div>
         </div>
@@ -47,7 +47,7 @@
   </section>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .contact-form {
   margin: $spacing-16;
   gap: $spacing-16 $spacing-8;

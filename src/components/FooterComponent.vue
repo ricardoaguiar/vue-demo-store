@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onMounted } from 'vue'
 import { useMainStore } from '@/store'
 
@@ -32,11 +32,11 @@ onMounted(async () => await store.fetchFooter())
             v-for="(social, i) in store.footerData?.social"
             :key="i"
             :href="social.url"
-            target="_blank"
-            rel="noopener noreferrer"
             class="social-link"
+            rel="noopener noreferrer"
+            target="_blank"
           >
-            <span v-html="social.icon" class="social-icon"></span>
+            <span class="social-icon" v-html="social.icon"></span>
           </a>
         </div>
       </div>
@@ -64,7 +64,7 @@ onMounted(async () => await store.fetchFooter())
   </footer>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .footer {
   padding: $spacing-base;
 }

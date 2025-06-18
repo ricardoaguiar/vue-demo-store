@@ -1,14 +1,10 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 // components
 import MobileMenu from '@/components/Header/MobileMenu.vue'
 import NavLinks from '@/components/Header/NavLinks.vue'
 import Logo from '@/components/Header/Logo.vue'
 import BasketButton from '@/components/Header/BasketButton.vue'
 import Basket from '@/components/Header/Basket.vue'
-
-defineProps<{
-  isHeaderNavigation?: boolean
-}>()
 </script>
 
 <template>
@@ -19,8 +15,10 @@ defineProps<{
       <div class="navbar-group left-side is-flex is-align-items-center">
         <MobileMenu />
         <Logo class="logo" />
-        <NavLinks :isHeaderNavigation="true" />
+        <NavLinks :is-header-navigation="true" />
+        <a href="https://rba.dev" target="_blank" rel="noopener noreferrer">Blog</a>
       </div>
+
       <div class="navbar-group right-side is-flex is-align-items-center">
         <BasketButton />
       </div>
@@ -29,7 +27,7 @@ defineProps<{
   </header>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .header {
   margin: 0 auto;
   padding-inline: $spacing-8;

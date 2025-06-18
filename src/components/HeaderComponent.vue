@@ -16,7 +16,7 @@ import Basket from '@/components/Header/Basket.vue'
         <MobileMenu />
         <Logo class="logo" />
         <NavLinks :is-header-navigation="true" />
-        <a href="https://rba.dev" target="_blank">Blog</a>
+        <a href="https://rba.dev" target="_blank" rel="noopener noreferrer">Blog</a>
       </div>
 
       <div class="navbar-group right-side is-flex is-align-items-center">

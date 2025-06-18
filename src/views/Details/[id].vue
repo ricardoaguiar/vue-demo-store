@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useRoute, useRouter } from 'vue-router'
 import { onMounted, reactive, computed } from 'vue'
 import { useMainStore } from '@/store'
@@ -63,12 +63,12 @@ const sliceItems = computed(() => {
 </script>
 
 <template>
-  <div class="product-details" v-if="item.details">
+  <div v-if="item.details" class="product-details">
     <Breadcrumb :details="item.details" />
     <ProductTile :product="item.details" />
     <ProductDescription />
 
-    <div class="related-item" v-if="sliceItems.length > 0">
+    <div v-if="sliceItems.length > 0" class="related-item">
       <h6 class="relate-product-title">Related Products</h6>
       <Card :cards="sliceItems" />
     </div>
@@ -79,7 +79,7 @@ const sliceItems = computed(() => {
     <router-link to="/">Back to Products</router-link>
   </div>
 </template>
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .product-details {
   margin-inline: $spacing-base;
   margin-block: $spacing-5;

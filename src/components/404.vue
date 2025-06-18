@@ -6,9 +6,9 @@
       It looks like the page you're looking for doesn't exist or has been moved.
     </p>
     <img
-      class="not-found-image"
       :src="useAsset('404.jpg')"
       alt="Page Not Found"
+      class="not-found-image"
     />
     <ButtonComponent class="back-button" @click="backToProducts"
       >Back to Product List</ButtonComponent
@@ -17,7 +17,7 @@
   <FooterComponent />
 </template>
 
-<script setup lang="ts">
+<script lang="ts" setup>
 import router from '@/router'
 import { useAsset } from '@/composables'
 import HeaderComponent from '@/components/HeaderComponent.vue'
@@ -29,7 +29,7 @@ function backToProducts(): void {
 }
 </script>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .not-found-container {
   @include flex(
     $direction: column,

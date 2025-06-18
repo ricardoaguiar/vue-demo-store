@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { ref } from 'vue'
 
 const isSubmitted = ref(false)
@@ -20,13 +20,13 @@ function submit(): void {
         </div>
 
         <div class="column is-full-mobile">
-          <div class="newsletter-form" v-if="!isSubmitted">
+          <div v-if="!isSubmitted" class="newsletter-form">
             <form @submit.prevent="submit">
               <input
                 class="input"
-                type="email"
                 placeholder="Your E-mail"
                 required
+                type="email"
               />
               <button class="submit-button is-dark input-button">Submit</button>
             </form>
@@ -41,7 +41,7 @@ function submit(): void {
   </section>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .newsletter-area {
   background-color: $light-blue;
   padding: $spacing-16;

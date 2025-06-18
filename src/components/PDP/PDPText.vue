@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onUnmounted, reactive } from 'vue'
 
 const text = reactive({
@@ -18,11 +18,11 @@ const selectedInfo = (index: number): number => (text.active = index)
 <template>
   <div class="product-description has-text-centered columns is-mobile is-0">
     <div
-      class="column is-flex-grow-1"
       v-for="(info, index) in text.moreInfo"
-      :class="{ 'is-active': index === text.active }"
-      @click="selectedInfo(index)"
       :key="index"
+      :class="{ 'is-active': index === text.active }"
+      class="column is-flex-grow-1"
+      @click="selectedInfo(index)"
     >
       <h6>{{ info }}</h6>
     </div>
@@ -45,7 +45,7 @@ const selectedInfo = (index: number): number => (text.active = index)
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .product-description {
   margin-block: $spacing-8;
 }

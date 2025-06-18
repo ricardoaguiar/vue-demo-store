@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { useAsset } from '@/composables'
 import { onMounted } from 'vue'
 import { useMainStore } from '@/store'
@@ -25,9 +25,9 @@ onMounted(async () => await store.fetchAboutUs())
           <img
             :src="useAsset(item?.image)"
             alt="home-img"
-            title="home-img"
             class="about-us-img"
             loading="lazy"
+            title="home-img"
           />
         </div>
 
@@ -42,7 +42,7 @@ onMounted(async () => await store.fetchAboutUs())
   </section>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .about-us {
   padding: $spacing-8;
 }

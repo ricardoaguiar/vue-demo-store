@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script lang="ts" setup>
 import { onMounted, ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 
@@ -63,15 +63,15 @@ function goShopping(): void {
     <div v-if="purchasedItems.length > 0">
       <ul class="product-list">
         <li
-          class="product-list-item"
           v-for="item in purchasedItems"
           :key="item.id"
+          class="product-list-item"
         >
           <router-link :to="`/details/${item.id}`" class="product-link">
             <span class="product-list-tile">
               <img
-                :src="useAsset(item.img)"
                 :alt="item.name"
+                :src="useAsset(item.img)"
                 class="product-image"
               />
               <strong>{{ item.title }}</strong>
@@ -96,22 +96,22 @@ function goShopping(): void {
       <ButtonComponent
         v-if="purchasedItems.length !== 0"
         buttonClass="delete-order"
-        @click="deleteOrder"
         buttonText="Delete Order"
         class="button delete-order"
+        @click="deleteOrder"
       />
 
       <ButtonComponent
-        buttonText="Continue Shopping"
-        buttonClass="go-shopping"
-        @click="goShopping"
         :class="{ 'deleted-order': !orderId }"
+        buttonClass="go-shopping"
+        buttonText="Continue Shopping"
+        @click="goShopping"
       />
     </div>
   </div>
 </template>
 
-<style scoped lang="scss">
+<style lang="scss" scoped>
 .thank-you-page {
   width: 100%;
 }

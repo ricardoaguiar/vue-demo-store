@@ -5,7 +5,7 @@ import { useAsset } from '@/composables'
 <template>
   <router-link class="logo" to="/">
     <img
-      :src="useAsset('fi-logo.svg')"
+      :src="useAsset('logo.svg')"
       alt="site-logo"
       height="40"
       title="site-logo"

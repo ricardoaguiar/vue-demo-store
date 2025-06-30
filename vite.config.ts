@@ -37,7 +37,6 @@ export default defineConfig({
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@types': fileURLToPath(new URL('./types', import.meta.url)),
-      crypto: 'crypto-browserify',
     },
   },
   optimizeDeps: {
@@ -49,8 +48,12 @@ export default defineConfig({
   },
   define: {
     'process.env': {},
+    global: 'globalThis',
   },
   build: {
     outDir: 'dist',
+    rollupOptions: {
+      external: ['crypto'],
+    },
   },
 })

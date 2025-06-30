@@ -2,8 +2,8 @@
   <ContactForm />
 </template>
 
-<script setup lang="ts">
-import { useHead } from '@vueuse/head'
+<script lang="ts" setup>
+import { useHead } from '@unhead/vue'
 import ContactForm from '@/components/ContactForm.vue'
 
 useHead({

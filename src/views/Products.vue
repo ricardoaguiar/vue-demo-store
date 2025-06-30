@@ -10,7 +10,7 @@
 </template>
 
 <script lang="ts" setup>
-import { useHead } from '@vueuse/head'
+import { useHead } from '@unhead/vue'
 
 // Components
 import BreadCrumbs from '@/components/Products/BreadCrumbs.vue'

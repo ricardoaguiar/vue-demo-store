@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-import Components from 'unplugin-vue-components/vite'
 import { fileURLToPath, URL } from 'node:url'
+import Components from 'unplugin-vue-components/vite'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -11,16 +11,17 @@ export default defineConfig({
       dirs: ['src/components'],
       extensions: ['vue'],
       deep: true,
-    }),
+    }) as any,
   ],
 
   css: {
     preprocessorOptions: {
       scss: {
         additionalData: `
-        @import "@/assets/styles/variables.scss";
-        @import "@/assets/styles/mixins.scss";
-        `,
+        @use "@/assets/styles/variables.scss" as *;
+        @use "sass:map";
+        @use "@/assets/styles/mixins.scss" as *;
+      `,
       },
     },
   },

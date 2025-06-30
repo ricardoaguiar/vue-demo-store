@@ -31,13 +31,24 @@ export default defineConfig({
     port: 3000,
     open: true,
   },
-  base: '/', // Ensure this matches your BASE_URL
+  base: '/',
 
   resolve: {
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url)),
       '@types': fileURLToPath(new URL('./types', import.meta.url)),
+      crypto: 'crypto-browserify',
     },
+  },
+  optimizeDeps: {
+    esbuildOptions: {
+      define: {
+        global: 'globalThis',
+      },
+    },
+  },
+  define: {
+    'process.env': {},
   },
   build: {
     outDir: 'dist',

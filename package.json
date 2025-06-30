@@ -25,6 +25,7 @@
     "@vitejs/plugin-vue": "6.0.0",
     "@vue/eslint-config-prettier": "10.2.0",
     "@vue/tsconfig": "0.7.0",
+    "crypto-browserify": "^3.12.1",
     "eslint": "^9.30.0",
     "eslint-plugin-vue": "10.2.0",
     "prettier": "3.6.2",

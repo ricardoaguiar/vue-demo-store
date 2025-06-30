@@ -42,7 +42,7 @@ $bold: 700;
 $bolder: 900;
 
 // Enable caret if needed
-$enable-caret: true;
+$enable-caret: true !default;
 $caret-width: 5px;
 
 // Color variables

@@ -2,7 +2,8 @@
   "compilerOptions": {
     "target": "esnext",
     "module": "es2020",
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
     "strict": true,
     "jsx": "preserve",
     "esModuleInterop": true,

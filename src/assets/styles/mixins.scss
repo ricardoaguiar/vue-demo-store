@@ -1,3 +1,6 @@
+@use "@/assets/styles/variables" as *;
+@use "sass:map";
+
 $breakpoints: (
         mobile-small: 480px,
         mobile: 768px,
@@ -10,8 +13,8 @@ $breakpoints: (
 
 @mixin responsive($breakpoint, $direction: max, $max-breakpoint: null) {
   // Look up the breakpoint in the map
-  $size: map-get($breakpoints, $breakpoint);
-  $max-size: if($max-breakpoint, map-get($breakpoints, $max-breakpoint), null);
+  $size: map.get($breakpoints, $breakpoint);
+  $max-size: if($max-breakpoint, map.get($breakpoints, $max-breakpoint), null);
 
   // Apply media query based on direction (max-width or min-width)
   @if $size {

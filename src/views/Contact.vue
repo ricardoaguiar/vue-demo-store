@@ -1,7 +1,3 @@
-<template>
-  <ContactForm />
-</template>
-
 <script lang="ts" setup>
 import { useHead } from '@unhead/vue'
 import ContactForm from '@/components/ContactForm.vue'
@@ -16,3 +12,7 @@ useHead({
   ],
 })
 </script>
+
+<template>
+  <ContactForm />
+</template>

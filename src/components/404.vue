@@ -1,3 +1,15 @@
+<script lang="ts" setup>
+import router from '@/router'
+import { useAsset } from '@/composables'
+import HeaderComponent from '@/components/HeaderComponent.vue'
+import FooterComponent from '@/components/FooterComponent.vue'
+import ButtonComponent from '@/components/UI/ButtonComponent.vue'
+
+function backToProducts(): void {
+  router.push({ path: '/products' })
+}
+</script>
+
 <template>
   <HeaderComponent />
   <div class="not-found-container">
@@ -16,18 +28,6 @@
   </div>
   <FooterComponent />
 </template>
-
-<script lang="ts" setup>
-import router from '@/router'
-import { useAsset } from '@/composables'
-import HeaderComponent from '@/components/HeaderComponent.vue'
-import FooterComponent from '@/components/FooterComponent.vue'
-import ButtonComponent from '@/components/UI/ButtonComponent.vue'
-
-function backToProducts(): void {
-  router.push({ path: '/products' })
-}
-</script>
 
 <style lang="scss" scoped>
 .not-found-container {

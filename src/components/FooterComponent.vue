@@ -3,6 +3,7 @@ import { onMounted } from 'vue'
 import { useMainStore } from '@/store'
 
 const store = useMainStore()
+const year = new Date().getFullYear()
 
 onMounted(async () => await store.fetchFooter())
 </script>
@@ -59,7 +60,7 @@ onMounted(async () => await store.fetchFooter())
     </div>
 
     <div class="copyright has-text-centered">
-      <p>{{ store.footerData?.copyright }}</p>
+      <p>{{ store.footerData?.copyright }} {{ year }}</p>
     </div>
   </footer>
 </template>
